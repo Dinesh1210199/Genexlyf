@@ -131,7 +131,7 @@ export default function Testimonials() {
           >
             <h3 className="text-2xl font-bold text-foreground mb-4">Share Your Story</h3>
             <p className="text-muted-foreground mb-6">
-              Have you worked with Uproot Innovations? We'd love to hear about your experience.
+              Have you worked with Genexlyf? We'd love to hear about your experience.
             </p>
             <Button variant="default" size="lg" asChild>
               <Link to="/contact">

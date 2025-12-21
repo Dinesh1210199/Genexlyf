@@ -1,29 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight, Quote } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Clock } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
-
-const testimonials = [
-  {
-    quote: "Uproot's AI solutions transformed how we manage our campus operations. The efficiency gains have been remarkable.",
-    author: "Dr. Sarah Chen",
-    role: "Dean of Technology",
-    organization: "Metro University",
-  },
-  {
-    quote: "Their human-centered approach to automation made the transition seamless. Our team adopted the new systems quickly.",
-    author: "Rajesh Kumar",
-    role: "Operations Director",
-    organization: "TechCorp Industries",
-  },
-  {
-    quote: "The Uproot team truly understands education. They delivered solutions that work for students and administrators alike.",
-    author: "Maria González",
-    role: "Principal",
-    organization: "Innovation Academy",
-  },
-];
 
 export function TestimonialsPreview() {
   return (
@@ -31,49 +8,29 @@ export function TestimonialsPreview() {
       <div className="container mx-auto px-4">
         <SectionHeader
           badge="Voices of Trust"
-          title="What Our Partners Say"
-          description="Hear from those who've experienced the impact of our AI and automation solutions."
+          title="Client Stories Coming Soon"
+          description="We're currently working with early partners. Real stories and case studies will be published soon."
         />
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.author}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow relative"
-            >
-              <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
-              <p className="text-foreground leading-relaxed mb-6 relative z-10">
-                "{testimonial.quote}"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-bold text-primary">
-                    {testimonial.author.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.organization}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/testimonials">
-              Read All Testimonials
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </Link>
-          </Button>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto text-center"
+        >
+          <div className="bg-white rounded-[20px] border border-[#EAF0FF] p-12 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+            <div className="w-16 h-16 bg-[#1E63E9]/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Clock className="w-8 h-8 text-[#1E63E9]" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-2xl font-semibold text-[#0F172A] mb-4" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+              Coming Soon
+            </h3>
+            <p className="text-[#475569] text-lg" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+              We're building meaningful partnerships and creating real impact. Client stories and testimonials will be shared here as we grow together.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

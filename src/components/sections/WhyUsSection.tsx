@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
-import { Check, Sparkles, Users, Zap, Shield, TrendingUp, Heart } from "lucide-react";
+import { Brain, Users, Zap, Shield, TrendingUp, Heart } from "lucide-react";
 
 const reasons = [
   {
-    icon: Sparkles,
-    title: "Innovation-First Mindset",
-    description: "We challenge conventional approaches with cutting-edge AI solutions.",
+    icon: Brain,
+    title: "AI-First Thinking",
+    description: "We design every solution with intelligence at its core—leveraging AI, automation, and data to create smarter, faster, and more adaptive systems.",
   },
   {
     icon: Users,
-    title: "Human-Centered Design",
-    description: "Technology that empowers people, not replaces them.",
+    title: "Client-Centric Collaboration",
+    description: "We work as an extension of your team, deeply understanding your goals before building solutions that fit your business—not the other way around.",
   },
   {
     icon: Zap,
-    title: "Rapid Prototyping",
-    description: "From concept to working solution in record time.",
+    title: "Rapid Build & Deploy",
+    description: "From idea to implementation, we move fast. Our agile process helps launch reliable solutions quickly without compromising quality.",
   },
   {
     icon: Shield,
-    title: "Scalable Architecture",
-    description: "Solutions that grow with your organization.",
+    title: "Scalable & Secure Architecture",
+    description: "Our systems are built to grow with you—secure, cloud-ready, and designed to handle evolving business demands.",
   },
   {
     icon: TrendingUp,
-    title: "Measurable Impact",
-    description: "Data-driven results you can see and track.",
+    title: "Measurable Business Impact",
+    description: "We focus on outcomes, not just outputs. Every solution is designed to deliver visible improvements in efficiency, growth, and performance.",
   },
   {
     icon: Heart,
-    title: "Partnership Approach",
-    description: "We succeed when you succeed. Long-term collaboration.",
+    title: "Long-Term Partnership",
+    description: "We don't just deliver and disappear. We grow with our clients, providing continuous support, optimization, and innovation.",
   },
 ];
 
@@ -46,15 +46,14 @@ export function WhyUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground text-sm font-medium rounded-full mb-4">
-              Our Advantages
+            <span className="inline-block px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+              Why Genexlyf
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Why We Stand Tall
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A0A0A] mb-6" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+              Why We Stand Apart
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              At Uproot Innovations, we combine deep technical expertise with a genuine passion 
-              for transforming how organizations operate. Here's what sets us apart.
+            <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+              At Genexlyf, we combine deep technical expertise with a collaborative, human-first approach to deliver software, services, and products that truly move businesses forward.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-4">
@@ -67,12 +66,12 @@ export function WhyUsSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <reason.icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 bg-[#1E63E9]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <reason.icon className="w-5 h-5 text-[#1E63E9]" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">{reason.title}</h4>
-                    <p className="text-sm text-muted-foreground">{reason.description}</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{reason.title}</h4>
+                    <p className="text-sm text-[#475569]" style={{ lineHeight: '1.5', fontFamily: 'Inter, sans-serif' }}>{reason.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -110,25 +109,44 @@ export function WhyUsSection() {
               
               {/* Center element */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-hero-gradient rounded-3xl shadow-lg flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary-foreground">U</span>
-                </div>
+                <motion.div 
+                  className="w-48 h-48 flex items-center justify-center"
+                  animate={{ 
+                    scale: [1, 1.02, 1],
+                    opacity: [0.95, 1, 0.95]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <img 
+                    src="/Logo.ico.png" 
+                    alt="Genexlyf Logo" 
+                    className="w-full h-full object-contain"
+                    style={{ 
+                      backgroundColor: 'transparent',
+                      background: 'transparent'
+                    }}
+                  />
+                </motion.div>
               </div>
               
               {/* Floating badges */}
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-8 right-8 bg-card px-4 py-2 rounded-full shadow-md border border-border"
+                className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md border border-gray-200"
               >
-                <span className="text-sm font-medium text-foreground">AI-First</span>
+                <span className="text-sm font-medium text-[#1E63E9]">AI-First</span>
               </motion.div>
               <motion.div
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute bottom-8 left-8 bg-secondary px-4 py-2 rounded-full shadow-md"
+                className="absolute bottom-8 left-8 bg-gradient-to-r from-[#1E63E9] to-[#22C1FF] px-4 py-2 rounded-full shadow-md"
               >
-                <span className="text-sm font-medium text-secondary-foreground">Scalable</span>
+                <span className="text-sm font-medium text-white">Scalable • Secure • Future-Ready</span>
               </motion.div>
             </div>
           </motion.div>

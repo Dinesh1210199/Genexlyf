@@ -18,7 +18,7 @@ export function BeliefsSection() {
             What We Stand For
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our philosophy and vision guide every innovation we create.
+            Our vision, values, and AI-driven mindset shape everything we build.
           </p>
         </motion.div>
 
@@ -29,21 +29,19 @@ export function BeliefsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-card rounded-3xl p-8 shadow-md hover:shadow-lg transition-shadow border border-border"
+            className="bg-white rounded-[20px] p-8 shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300 border border-gray-100"
           >
-            <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-              <Target className="w-7 h-7 text-primary" />
+            <div className="w-14 h-14 bg-[#1E63E9]/10 rounded-2xl flex items-center justify-center mb-6">
+              <Target className="w-7 h-7 text-[#1E63E9]" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Our Core Belief</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              We transform challenges into scalable opportunities through intelligent, human-centered automation. 
-              Technology must unlock human potential through practical AI and adaptive systems that empower 
-              rather than replace.
+            <h3 className="text-2xl font-semibold text-[#0A0A0A] mb-4" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>Our Core Belief</h3>
+            <p className="text-[#5F6B7A] mb-6" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+              At Genexlyf, we believe technology should elevate people and businesses, not complicate them. By combining intelligent software, AI-powered automation, and thoughtful design, we transform complex challenges into scalable, real-world solutions that create lasting impact.
             </p>
-            <div className="flex items-center gap-2 text-primary font-medium">
-              <span>Discover Our Beliefs</span>
-              <ArrowRight className="w-4 h-4" />
-            </div>
+            <Link to="/about" className="inline-flex items-center gap-2 text-[#1E63E9] font-medium hover:gap-3 transition-all group">
+              <span>Explore Our Values</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
           {/* Vision */}
@@ -52,23 +50,19 @@ export function BeliefsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-hero-gradient rounded-3xl p-8 shadow-md hover:shadow-lg transition-shadow"
+            className="bg-gradient-to-br from-[#0D4BEF] to-[#1F8CFF] rounded-[20px] p-8 shadow-[0_12px_30px_rgba(13,75,239,0.25)] hover:shadow-[0_16px_40px_rgba(13,75,239,0.35)] hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="w-14 h-14 bg-primary-foreground/20 rounded-2xl flex items-center justify-center mb-6">
-              <Compass className="w-7 h-7 text-secondary" />
+            <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+              <Compass className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-primary-foreground mb-4">The Road Ahead</h3>
-            <p className="text-primary-foreground/80 leading-relaxed mb-6">
-              We envision leading AI integration for campuses and enterprises, unlocking limitless potential. 
-              A world where automation empowers educators and innovators to scale without limits, 
-              creating sustainable growth for all.
+            <h3 className="text-2xl font-semibold text-white mb-4" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>The Future We're Building</h3>
+            <p className="text-white/90 mb-6" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+              We envision a world where AI, automation, and digital products work seamlessly with human intelligence. From enterprises to emerging businesses, we help organizations scale smarter, move faster, and build sustainable growth through next-generation technology.
             </p>
-            <Button variant="heroOutline" size="sm" asChild>
-              <Link to="/about">
-                View Mission
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </Button>
+            <Link to="/about" className="inline-flex items-center gap-2 text-white font-medium hover:gap-3 transition-all group border border-white/30 px-4 py-2 rounded-lg hover:bg-white/10 backdrop-blur-sm">
+              <span>View Our Vision</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </div>

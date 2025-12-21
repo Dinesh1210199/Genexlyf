@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 active:scale-95 shadow-md hover:shadow-lg",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
+        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary/90 active:scale-95",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/70 active:scale-95 shadow-sm",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-[hsl(38,92%,50%)] to-[hsl(38,85%,60%)] text-[hsl(160,84%,10%)] font-bold shadow-lg hover:shadow-[0_0_40px_hsl(38,92%,50%,0.25)] hover:scale-105 active:scale-100",
-        heroOutline: "border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm",
-        gold: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-[0_0_40px_hsl(38,92%,50%,0.25)]",
+        hero: "bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:scale-105 active:scale-95 active:opacity-80 active:from-primary/90 active:to-secondary/90 transition-all",
+        heroOutline: "border-2 border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 backdrop-blur-sm",
+        gold: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-lg",
         subtle: "bg-muted text-foreground hover:bg-muted/80",
       },
       size: {

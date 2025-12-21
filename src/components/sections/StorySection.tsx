@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/components/ui/section-header";
 
 export function StorySection() {
   return (
@@ -16,31 +15,32 @@ export function StorySection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent text-accent-foreground text-sm font-medium rounded-full mb-4">
-              <Leaf className="w-4 h-4" />
-              Our Origins
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+              <Sparkles className="w-4 h-4" />
+              Who We Are
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              The Uproot Story
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0A0A0A] mb-6 leading-tight" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+              Generation Next Life Technology
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              We started with a bold conviction: true innovation begins by uprooting outdated systems at their roots. 
-              Founded by Kaviya, Leela, and Dinesh, we're actively exploring AI-powered automation and campus solutions 
-              that empower education and enterprises to thrive.
+            <p className="text-lg text-[#5F6B7A] mb-6" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              Genexlyf is a hybrid IT venture delivering intelligent software, services, and digital products. We work closely with our clients to understand their real needs and transform them into AI-powered, scalable solutions that simplify work, enhance lives, and drive meaningful business growth.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Our journey reflects continuous evolution—from prototyping intelligent systems to building scalable platforms 
-              that enhance human potential. At Uproot, every step forward plants seeds for tomorrow's transformation.
+            <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              From automation and data intelligence to enterprise software and innovative platforms, our journey is driven by continuous evolution. We design technology that adapts, learns, and grows—helping organizations stay agile, competitive, and ready for the next phase of digital transformation.
             </p>
-            <Button variant="default" size="lg" asChild>
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-[#1E63E9] to-[#22C1FF] text-white font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
+              asChild
+            >
               <Link to="/about">
-                Learn Our Story
+                Explore Our Vision
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </Button>
           </motion.div>
 
-          {/* Visual */}
+          {/* Right Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -48,38 +48,33 @@ export function StorySection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-square max-w-md mx-auto relative">
-              {/* Abstract growth visual */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/20 rounded-3xl" />
-              <div className="absolute inset-4 bg-card rounded-2xl shadow-lg flex items-center justify-center">
-                <div className="text-center p-8">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-32 h-32 mx-auto mb-6 relative"
-                  >
-                    <div className="absolute inset-0 border-4 border-primary/20 rounded-full" />
-                    <div className="absolute inset-2 border-4 border-secondary/30 rounded-full" />
-                    <div className="absolute inset-4 border-4 border-primary/40 rounded-full" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-secondary rounded-full" />
-                    </div>
-                  </motion.div>
-                  <p className="text-xl font-semibold text-foreground">Growing Together</p>
-                  <p className="text-muted-foreground">Since 2024</p>
-                </div>
+            <div className="bg-[#F7FAFF] rounded-[20px] p-8 md:p-12 shadow-[0_20px_40px_rgba(30,99,233,0.15)]">
+              <div className="text-center">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[#1E63E9] to-[#22C1FF] rounded-full flex items-center justify-center"
+                >
+                  <Sparkles className="w-8 h-8 text-white" />
+                </motion.div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-[#0A0A0A] mb-3" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+                  AI-Driven. Human-Focused.
+                </h3>
+                <p className="text-lg text-[#5F6B7A] mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Building the Next Life of Technology
+                </p>
+                <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#1E63E9] to-transparent mx-auto mb-4"></div>
+                <p className="text-sm text-[#5F6B7A]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Since 2024
+                </p>
               </div>
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl"
-              />
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"
-              />
             </div>
           </motion.div>
         </div>

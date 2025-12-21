@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,25 +36,25 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-md py-3"
-          : "bg-transparent py-5"
+          ? "bg-[#FFFFFF] backdrop-blur-md shadow-md py-3 border-[#E2E8F0]"
+          : "bg-[#FFFFFF] py-5 border-[#E2E8F0]"
       )}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <span className="text-primary-foreground font-bold text-xl">U</span>
-            </div>
-            <span className={cn(
-              "font-bold text-xl transition-colors",
-              isScrolled ? "text-foreground" : "text-primary"
-            )}>
-              Uproot
-            </span>
+            <img 
+              src="/Logo.ico.png" 
+              alt="Genexlyf Logo" 
+              className="w-23 h-20 object-contain transition-opacity group-hover:opacity-90"
+              style={{ 
+                backgroundColor: 'transparent',
+                background: 'transparent'
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,12 +64,10 @@ export function Header() {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                  "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative",
                   location.pathname === item.href
-                    ? "bg-primary/10 text-primary"
-                    : isScrolled
-                    ? "text-foreground/70 hover:text-foreground hover:bg-muted"
-                    : "text-foreground/70 hover:text-foreground hover:bg-primary/10"
+                    ? "text-[#0EA5E9] font-semibold"
+                    : "text-[#0F172A] hover:text-[#0EA5E9] active:text-[#0EA5E9] active:font-semibold active:scale-95"
                 )}
               >
                 {item.name}
@@ -79,24 +77,21 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="default" asChild>
+            <Button variant="hero" size="default" className="active:scale-95 active:opacity-80" asChild>
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 active:scale-95 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-[#0F172A]" />
             ) : (
-              <Menu className={cn(
-                "w-6 h-6",
-                isScrolled ? "text-foreground" : "text-foreground"
-              )} />
+              <Menu className="w-6 h-6 text-[#0F172A]" />
             )}
           </button>
         </nav>
@@ -110,7 +105,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-card border-t border-border"
+            className="lg:hidden bg-[#FFFFFF] border-t border-[#E2E8F0]"
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col gap-2">
@@ -119,16 +114,16 @@ export function Header() {
                     key={item.name}
                     to={item.href}
                     className={cn(
-                      "px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                      "px-4 py-3 rounded-lg text-base font-medium transition-all",
                       location.pathname === item.href
-                        ? "bg-primary/10 text-primary"
-                        : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                        ? "text-[#0EA5E9] font-semibold"
+                        : "text-[#0F172A] hover:text-[#0EA5E9] active:text-[#0EA5E9] active:font-semibold active:scale-95"
                     )}
                   >
                     {item.name}
                   </Link>
                 ))}
-                <Button variant="hero" size="lg" className="mt-4" asChild>
+                <Button variant="hero" size="lg" className="mt-4 active:scale-95 active:opacity-80" asChild>
                   <Link to="/contact">Get Started</Link>
                 </Button>
               </div>

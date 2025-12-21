@@ -1,46 +1,30 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, Brain, Users, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const stats = [
-  { value: 40, suffix: "%", label: "Reduction in campus operation costs" },
-  { value: 25, suffix: "%", label: "Improvement in engagement analytics" },
-  { value: 30, suffix: "%", label: "Faster processing times" },
-  { value: 50, suffix: "+", label: "Projects delivered" },
+const impacts = [
+  {
+    icon: Zap,
+    title: "Idea to Execution",
+    description: "From concept to working solutions through rapid prototyping and agile delivery.",
+  },
+  {
+    icon: Brain,
+    title: "AI-First Solutions",
+    description: "Designing intelligent systems with automation and data-driven thinking at the core.",
+  },
+  {
+    icon: Users,
+    title: "Client-Centric Builds",
+    description: "Every project starts with understanding people, processes, and real-world needs.",
+  },
+  {
+    icon: Handshake,
+    title: "Growing Collaborations",
+    description: "Working with early partners, institutions, and businesses on next-gen solutions.",
+  },
 ];
-
-function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      const duration = 2000;
-      const steps = 60;
-      const increment = value / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, value]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {count}{suffix}
-    </span>
-  );
-}
 
 export function ImpactSection() {
   return (
@@ -67,39 +51,48 @@ export function ImpactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary-foreground/10 text-primary-foreground text-sm font-medium rounded-full mb-4">
-            What We've Transformed
+          <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-full mb-4 border border-white/20">
+            Our Early Impact
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-            Measurable Impact
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            Impact in Progress
           </h2>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            We measure success by the tangible transformations our AI and automation solutions bring.
+          <p className="text-lg text-white/90 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+            As a growing startup, we focus on building strong foundations, meaningful outcomes, and scalable solutions that create real value from day one.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {stats.map((stat, index) => (
+          {impacts.map((impact, index) => (
             <motion.div
-              key={stat.label}
+              key={impact.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-5xl md:text-6xl font-bold text-secondary mb-2">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+              <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/20">
+                <impact.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
-              <p className="text-primary-foreground/80">{stat.label}</p>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+                {impact.title}
+              </h3>
+              <p className="text-white/80 text-sm" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+                {impact.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button variant="hero" size="lg" asChild>
+          <Button 
+            size="lg" 
+            className="bg-white text-[#1E63E9] font-semibold hover:bg-white/90 hover:scale-105 active:scale-95 transition-all shadow-lg hover:shadow-xl"
+            asChild
+          >
             <Link to="/impact">
-              See Full Impact Report
+              Explore Our Journey
               <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </Button>

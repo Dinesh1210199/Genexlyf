@@ -22,7 +22,7 @@ export function HeroSection() {
             opacity: [0.1, 0.15, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute -bottom-1/4 -left-1/4 w-2/3 h-2/3 bg-primary-foreground/10 rounded-full blur-3xl"
+          className="absolute -bottom-1/4 -left-1/4 w-2/3 h-2/3 bg-primary/10 rounded-full blur-3xl"
         />
         {/* Decorative dots */}
         <div className="absolute inset-0" style={{
@@ -38,8 +38,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-primary-foreground/90 text-sm font-medium mb-8">
-              <Sparkles className="w-4 h-4 text-secondary" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-8 border border-[#38BDF8]/30">
+              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
               AI-Powered Innovation for Tomorrow
             </span>
           </motion.div>
@@ -48,20 +48,19 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#FFFFFF] leading-tight mb-6"
+            style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}
           >
-            Roots of Tomorrow's{" "}
-            <span className="text-secondary">Innovation</span>
+            Build the Generation's Next Life Technology
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10"
+            className="text-lg md:text-xl text-[#E0F2FE] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            We uproot outdated methods to cultivate smarter, future-ready transformation 
-            through AI-powered automation and campus solutions.
+            We build intelligent software, AI-driven automation, and future-ready digital products that help businesses evolve, scale, and lead the next generation.
           </motion.p>
 
           <motion.div
@@ -70,14 +69,22 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="hero" size="xl" asChild>
+            <Button 
+              size="xl" 
+              className="bg-gradient-to-r from-[#2563EB] to-[#22D3EE] text-white font-bold shadow-lg hover:shadow-xl hover:shadow-[#22D3EE]/25 hover:scale-105 active:scale-95 transition-all border-0"
+              asChild
+            >
               <Link to="/services">
                 Explore Services
                 <ArrowRight className="w-5 h-5 ml-1" />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <Link to="/contact">Connect Now</Link>
+            <Button 
+              size="xl" 
+              className="bg-transparent text-[#E0F2FE] border border-[#38BDF8] font-semibold hover:bg-[#38BDF8]/10 hover:border-[#22D3EE] active:scale-95 transition-all"
+              asChild
+            >
+              <Link to="/contact">Connect With Us</Link>
             </Button>
           </motion.div>
         </div>
@@ -92,9 +99,9 @@ export function HeroSection() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2"
+            className="w-6 h-10 rounded-full border-2 border-[#E0F2FE]/30 flex items-start justify-center p-2"
           >
-            <motion.div className="w-1.5 h-3 bg-secondary rounded-full" />
+            <motion.div className="w-1.5 h-3 bg-[#22D3EE] rounded-full" />
           </motion.div>
         </motion.div>
       </div>
