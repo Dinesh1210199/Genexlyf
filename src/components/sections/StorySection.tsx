@@ -72,7 +72,7 @@ export function StorySection() {
                 </p>
                 <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#1E63E9] to-transparent mx-auto mb-4"></div>
                 <p className="text-sm text-[#5F6B7A]" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  Since 2024
+                  Since 2025
                 </p>
               </div>
             </div>

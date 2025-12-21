@@ -116,7 +116,7 @@ export default function About() {
                   >
                     <Sparkles className="w-10 h-10 text-[#0D4BEF]" />
                   </motion.div>
-                  <p className="text-lg font-semibold text-[#0A0A0A]">Since 2024</p>
+                  <p className="text-lg font-semibold text-[#0A0A0A]">Since 2025</p>
                 </div>
               </div>
             </motion.div>
