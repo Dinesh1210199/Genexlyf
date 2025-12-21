@@ -86,7 +86,9 @@ export default function Portfolio() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-hero-gradient">
+      <section className="pt-32 pb-20" style={{
+        background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,14 +96,14 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               What We're Building & Delivering
             </h1>
-            <p className="text-lg md:text-xl text-[#E0F2FE] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
               At Genexlyf, our portfolio reflects our journey — from early-stage solutions and internal platforms to custom-built systems for real-world problems. As a growing startup, we focus on quality, architecture, and long-term impact over volume.
             </p>
           </motion.div>
@@ -109,7 +111,9 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Philosophy */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -118,25 +122,25 @@ export default function Portfolio() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full mb-4 border border-cyan-500/30">
                   <Sparkles className="w-4 h-4" />
                   Portfolio Philosophy
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Our Approach to Work
                 </h2>
               </div>
               <div className="text-left">
-                <p className="text-lg text-[#5F6B7A] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-lg text-[#C7D2E0] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   We don't chase quantity.
                 </p>
-                <p className="text-lg text-[#5F6B7A] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-lg text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   We build thoughtfully designed solutions that are scalable, secure, and future-ready.
                 </p>
-                <p className="text-[#5F6B7A] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-[#C7D2E0] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   Every project you see here represents:
                 </p>
-                <ul className="space-y-2 text-[#5F6B7A] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <ul className="space-y-2 text-[#C7D2E0] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   {portfolioValues.map((value) => (
                     <li key={value} className="flex items-start">
                       <span className="mr-2">•</span>
@@ -151,7 +155,9 @@ export default function Portfolio() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="Featured Work"
@@ -162,26 +168,26 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <AnimatedCard key={project.title} delay={index * 0.1} className="p-8">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-[#0D4BEF]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <project.icon className="w-8 h-8 text-[#0D4BEF]" />
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
+                    <project.icon className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
-                      <h3 className="text-2xl font-bold text-[#0F172A]">🔹 {project.title}</h3>
-                      <Badge className="bg-[#EAF2FF] text-[#1E63E9] border-none">
+                      <h3 className="text-2xl font-bold text-white">🔹 {project.title}</h3>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
                         {project.status}
                       </Badge>
                     </div>
-                    <p className="text-sm text-[#1E63E9] font-medium mb-4">{project.category}</p>
-                    <p className="text-[#5F6B7A] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-sm text-cyan-400 font-medium mb-4">{project.category}</p>
+                    <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                       {project.description}
                     </p>
                     <div>
-                      <p className="text-[#0F172A] font-semibold mb-3">Highlights:</p>
+                      <p className="text-white font-semibold mb-3">Highlights:</p>
                       <ul className="space-y-2">
                         {project.highlights.map((highlight, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-[#475569]">
-                            <div className="w-1.5 h-1.5 bg-[#0D4BEF] rounded-full mt-2 flex-shrink-0" />
+                          <li key={idx} className="flex items-start gap-2 text-[#C7D2E0]">
+                            <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                             <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{highlight}</span>
                           </li>
                         ))}
@@ -196,7 +202,9 @@ export default function Portfolio() {
       </section>
 
       {/* Case Study Style */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="🔍 Case Study Style"
@@ -206,33 +214,33 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-3 gap-6">
               <AnimatedCard delay={0}>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-[#0D4BEF]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
                     <span className="text-2xl">❓</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#0F172A] mb-2">Problem</h3>
-                  <p className="text-[#5F6B7A] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-2">Problem</h3>
+                  <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                     {caseStudyStructure.problem}
                   </p>
                 </div>
               </AnimatedCard>
               <AnimatedCard delay={0.1}>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-[#1F8CFF]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
                     <span className="text-2xl">💡</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#0F172A] mb-2">Solution</h3>
-                  <p className="text-[#5F6B7A] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-2">Solution</h3>
+                  <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                     {caseStudyStructure.solution}
                   </p>
                 </div>
               </AnimatedCard>
               <AnimatedCard delay={0.2}>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-[#22C1FF]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
                     <span className="text-2xl">✅</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#0F172A] mb-2">Outcome</h3>
-                  <p className="text-[#5F6B7A] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-2">Outcome</h3>
+                  <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                     {caseStudyStructure.outcome}
                   </p>
                 </div>
@@ -243,7 +251,9 @@ export default function Portfolio() {
       </section>
 
       {/* Early-Stage Honesty */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -252,22 +262,22 @@ export default function Portfolio() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full mb-4 border border-cyan-500/30">
                   <Sparkles className="w-4 h-4" />
                   Growing with Purpose
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Early-Stage Honesty
                 </h2>
               </div>
               <div className="text-left">
-                <p className="text-lg text-[#5F6B7A] mb-6 leading-relaxed font-semibold" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-lg text-[#C7D2E0] mb-6 leading-relaxed font-semibold" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   We're early in our journey — and we're proud of it.
                 </p>
-                <p className="text-[#5F6B7A] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-[#C7D2E0] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   Instead of showcasing inflated numbers, we focus on:
                 </p>
-                <ul className="space-y-2 text-[#5F6B7A] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <ul className="space-y-2 text-[#C7D2E0] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   {earlyStageFocus.map((focus) => (
                     <li key={focus} className="flex items-start">
                       <span className="mr-2">•</span>
@@ -275,7 +285,7 @@ export default function Portfolio() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-[#5F6B7A] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   Our portfolio will continue to evolve as we grow alongside our clients.
                 </p>
               </div>
@@ -285,7 +295,9 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio CTA */}
-      <section className="py-24 bg-hero-gradient">
+      <section className="py-24" style={{
+        background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -293,10 +305,10 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#FFFFFF] mb-4" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
                 Want to Build Something With Us?
               </h2>
-              <p className="text-lg text-[#E0F2FE] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 If you have an idea, a challenge, or a system you want to improve — let's explore it together.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -307,9 +319,10 @@ export default function Portfolio() {
                   </Link>
                 </Button>
                 <Button 
+                  variant="outline"
                   size="lg" 
                   asChild
-                  className="bg-white text-[#0D4BEF] hover:bg-[#E0F2FE] hover:text-[#0D4BEF] font-semibold border-2 border-white shadow-lg hover:shadow-xl transition-all"
+                  className="hover:scale-105 active:scale-95 transition-all"
                 >
                   <Link to="/products">
                     👉 Explore Our Products

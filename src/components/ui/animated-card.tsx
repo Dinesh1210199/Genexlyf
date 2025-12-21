@@ -23,7 +23,7 @@ export function AnimatedCard({
       transition={{ duration: 0.5, delay }}
       whileHover={hover ? { y: -8, transition: { duration: 0.3 } } : undefined}
       className={cn(
-        "bg-card-gradient rounded-2xl border border-border p-6 shadow-sm hover:shadow-lg transition-shadow duration-300",
+        "bg-gradient-to-br from-[#161E2E] to-[#1A2333] rounded-2xl border border-cyan-500/20 p-6 shadow-lg hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300",
         className
       )}
     >

@@ -11,11 +11,11 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 active:scale-95 shadow-md hover:shadow-lg",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary/90 active:scale-95",
+        outline: "border-2 border-cyan-500/50 bg-transparent text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-cyan-300 active:scale-95",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:bg-secondary/70 active:scale-95 shadow-sm",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary to-secondary text-primary-foreground font-bold shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:scale-105 active:scale-95 active:opacity-80 active:from-primary/90 active:to-secondary/90 transition-all",
+        hero: "bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 text-white font-bold shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 active:opacity-80 transition-all hover:from-blue-400 hover:via-blue-300 hover:to-cyan-300",
         heroOutline: "border-2 border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 backdrop-blur-sm",
         gold: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-lg",
         subtle: "bg-muted text-foreground hover:bg-muted/80",

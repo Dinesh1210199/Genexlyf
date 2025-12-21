@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-hero-gradient">
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{
+      background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+    }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -14,7 +16,7 @@ export function HeroSection() {
             opacity: [0.1, 0.2, 0.1],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-secondary/20 rounded-full blur-3xl"
+          className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-cyan-500/20 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -22,11 +24,11 @@ export function HeroSection() {
             opacity: [0.1, 0.15, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute -bottom-1/4 -left-1/4 w-2/3 h-2/3 bg-primary/10 rounded-full blur-3xl"
+          className="absolute -bottom-1/4 -left-1/4 w-2/3 h-2/3 bg-blue-500/10 rounded-full blur-3xl"
         />
         {/* Decorative dots */}
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(34, 193, 255, 0.1) 1px, transparent 0)`,
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -38,8 +40,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-8 border border-[#38BDF8]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-8 border border-cyan-500/30">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               AI-Powered Innovation for Tomorrow
             </span>
           </motion.div>
@@ -58,7 +60,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#E0F2FE] max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-[#C7D2E0] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             We build intelligent software, AI-driven automation, and future-ready digital products that help businesses evolve, scale, and lead the next generation.
           </motion.p>
@@ -71,7 +73,7 @@ export function HeroSection() {
           >
             <Button 
               size="xl" 
-              className="bg-gradient-to-r from-[#2563EB] to-[#22D3EE] text-white font-bold shadow-lg hover:shadow-xl hover:shadow-[#22D3EE]/25 hover:scale-105 active:scale-95 transition-all border-0"
+              className="bg-gradient-to-r from-blue-500 via-blue-400 to-cyan-400 text-white font-bold shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all border-0"
               asChild
             >
               <Link to="/services">
@@ -81,7 +83,7 @@ export function HeroSection() {
             </Button>
             <Button 
               size="xl" 
-              className="bg-transparent text-[#E0F2FE] border border-[#38BDF8] font-semibold hover:bg-[#38BDF8]/10 hover:border-[#22D3EE] active:scale-95 transition-all"
+              className="bg-transparent text-cyan-300 border border-cyan-500/50 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 hover:text-cyan-200 active:scale-95 transition-all"
               asChild
             >
               <Link to="/contact">Connect With Us</Link>
@@ -99,9 +101,9 @@ export function HeroSection() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-[#E0F2FE]/30 flex items-start justify-center p-2"
+            className="w-6 h-10 rounded-full border-2 border-cyan-500/30 flex items-start justify-center p-2"
           >
-            <motion.div className="w-1.5 h-3 bg-[#22D3EE] rounded-full" />
+            <motion.div className="w-1.5 h-3 bg-cyan-400 rounded-full" />
           </motion.div>
         </motion.div>
       </div>

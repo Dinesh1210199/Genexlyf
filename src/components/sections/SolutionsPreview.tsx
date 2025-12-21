@@ -24,7 +24,9 @@ const solutions = [
 
 export function SolutionsPreview() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24" style={{
+      background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+    }}>
       <div className="container mx-auto px-4">
         <SectionHeader
           badge="Intelligence in Action"
@@ -42,15 +44,15 @@ export function SolutionsPreview() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="bg-white rounded-[20px] p-8 h-full border border-gray-100 hover:border-[#1E63E9]/30 transition-all duration-300 hover:shadow-[0_16px_40px_rgba(30,99,233,0.15)] hover:-translate-y-1">
+              <div className="bg-gradient-to-br from-[#161E2E] to-[#1A2333] rounded-[20px] p-8 h-full border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#1E63E9] to-[#22C1FF] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
                   <solution.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-[#0F172A] mb-3" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{solution.title}</h3>
-                <p className="text-[#475569] mb-6" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{solution.description}</p>
+                <h3 className="text-2xl font-semibold text-white mb-3" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{solution.title}</h3>
+                <p className="text-[#C7D2E0] mb-6" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{solution.description}</p>
                 <Link 
                   to="/solutions" 
-                  className="inline-flex items-center gap-2 text-[#1E63E9] font-medium hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-cyan-400 font-medium hover:text-cyan-300 hover:gap-3 transition-all group/link"
                 >
                   View Use Cases
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -64,7 +66,7 @@ export function SolutionsPreview() {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-2 border-[#1E63E9] text-[#1E63E9] hover:bg-[#1E63E9] hover:text-white font-semibold hover:scale-105 active:scale-95 transition-all"
+            className="hover:scale-105 active:scale-95 transition-all"
             asChild
           >
             <Link to="/solutions">

@@ -28,7 +28,9 @@ const products = [
 
 export function ProductsPreview() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24" style={{
+      background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+    }}>
       <div className="container mx-auto px-4">
         <SectionHeader
           badge="Built for the Next Generation"
@@ -44,28 +46,28 @@ export function ProductsPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-[20px] border border-[#EAF0FF] overflow-hidden group hover:shadow-[0_16px_40px_rgba(30,99,233,0.15)] hover:-translate-y-1 transition-all duration-300"
+              className="bg-gradient-to-br from-[#161E2E] to-[#1A2333] rounded-[20px] border border-cyan-500/20 overflow-hidden group hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-[#1E63E9]/10 rounded-xl flex items-center justify-center group-hover:bg-[#1E63E9]/20 transition-colors">
-                    <product.icon className="w-6 h-6 text-[#1E63E9]" strokeWidth={1.5} />
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors border border-cyan-500/30">
+                    <product.icon className="w-6 h-6 text-cyan-400" strokeWidth={1.5} />
                   </div>
                   <Badge 
                     className={`text-xs ${
                       product.status === "Coming Soon" 
-                        ? "bg-[#EAF2FF] text-[#1E63E9]" 
+                        ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/30" 
                         : "bg-gradient-to-r from-[#1E63E9] to-[#22C1FF] text-white"
                     }`}
                   >
                     {product.status}
                   </Badge>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0F172A] mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{product.name}</h3>
-                <p className="text-[#475569] text-sm mb-4" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{product.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{product.name}</h3>
+                <p className="text-[#C7D2E0] text-sm mb-4" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{product.description}</p>
                 <Link 
                   to="/products" 
-                  className="inline-flex items-center gap-2 text-[#1E63E9] text-sm font-medium hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-cyan-400 text-sm font-medium hover:text-cyan-300 hover:gap-3 transition-all group/link"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -79,7 +81,7 @@ export function ProductsPreview() {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-2 border-[#1E63E9] text-[#1E63E9] hover:bg-[#1E63E9] hover:text-white font-semibold hover:scale-105 active:scale-95 transition-all"
+            className="hover:scale-105 active:scale-95 transition-all"
             asChild
           >
             <Link to="/products">

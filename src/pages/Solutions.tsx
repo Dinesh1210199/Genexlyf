@@ -109,7 +109,9 @@ export default function Solutions() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-hero-gradient">
+      <section className="pt-32 pb-20" style={{
+        background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -117,14 +119,14 @@ export default function Solutions() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Solutions
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Technology Built to Solve Real-World Problems
             </h1>
-            <p className="text-lg md:text-xl text-[#E0F2FE] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
               At Genexlyf, our solutions are designed around real business challenges, not buzzwords. By combining AI, automation, and modern software engineering, we help organizations simplify operations, make smarter decisions, and grow sustainably.
             </p>
           </motion.div>
@@ -132,7 +134,9 @@ export default function Solutions() {
       </section>
 
       {/* Solutions Overview */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -140,10 +144,10 @@ export default function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 How We Create Impact
               </h2>
-              <p className="text-lg text-[#5F6B7A] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 We don't believe in one-size-fits-all tools.<br />
                 Our solutions are customized, scalable, and future-ready, built by closely understanding how your business actually works.
               </p>
@@ -153,38 +157,40 @@ export default function Solutions() {
       </section>
 
       {/* Solutions */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="space-y-12 max-w-5xl mx-auto">
             {solutions.map((solution, index) => (
               <AnimatedCard key={solution.title} delay={index * 0.1} className="p-8">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-[#0D4BEF]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <solution.icon className="w-8 h-8 text-[#0D4BEF]" />
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
+                    <solution.icon className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-[#0F172A] mb-3">{solution.title}</h3>
-                    <p className="text-[#5F6B7A] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                    <h3 className="text-2xl font-bold text-white mb-3">{solution.title}</h3>
+                    <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                       {solution.description}
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <p className="text-[#0F172A] font-semibold mb-3">What we solve:</p>
+                        <p className="text-white font-semibold mb-3">What we solve:</p>
                         <ul className="space-y-2">
                           {solution.whatWeSolve.map((item) => (
-                            <li key={item} className="flex items-start gap-2 text-[#475569]">
-                              <div className="w-1.5 h-1.5 bg-[#0D4BEF] rounded-full mt-2 flex-shrink-0" />
+                            <li key={item} className="flex items-start gap-2 text-[#C7D2E0]">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                               <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <p className="text-[#0F172A] font-semibold mb-3">Our approach:</p>
+                        <p className="text-white font-semibold mb-3">Our approach:</p>
                         <ul className="space-y-2">
                           {solution.ourApproach.map((item) => (
-                            <li key={item} className="flex items-start gap-2 text-[#475569]">
-                              <div className="w-1.5 h-1.5 bg-[#1F8CFF] rounded-full mt-2 flex-shrink-0" />
+                            <li key={item} className="flex items-start gap-2 text-[#C7D2E0]">
+                              <div className="w-1.5 h-1.5 bg-cyan-300 rounded-full mt-2 flex-shrink-0" />
                               <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{item}</span>
                             </li>
                           ))}
@@ -200,7 +206,9 @@ export default function Solutions() {
       </section>
 
       {/* How Our Solutions Work */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="How Our Solutions Work"
@@ -216,12 +224,12 @@ export default function Solutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-sm"
+                  className="flex items-start gap-4 bg-gradient-to-br from-[#161E2E] to-[#1A2333] rounded-xl p-5 shadow-sm border border-cyan-500/20"
                 >
-                  <div className="w-10 h-10 bg-[#0D4BEF] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#1E63E9] to-[#22C1FF] rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold">{index + 1}️⃣</span>
                   </div>
-                  <p className="text-[#0F172A] font-medium pt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <p className="text-white font-medium pt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {step}
                   </p>
                 </motion.div>
@@ -232,7 +240,9 @@ export default function Solutions() {
       </section>
 
       {/* Why Genexlyf Solutions */}
-      <section className="py-24 bg-hero-gradient">
+      <section className="py-24" style={{
+        background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -240,11 +250,11 @@ export default function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-                <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
                 Why Genexlyf Solutions
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#FFFFFF] mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
                 What Makes Our Solutions Different
               </h2>
               <div className="grid md:grid-cols-2 gap-4 mb-10 max-w-3xl mx-auto">
@@ -255,10 +265,10 @@ export default function Solutions() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3"
+                    className="bg-cyan-500/20 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3 border border-cyan-500/30"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-[#22D3EE] flex-shrink-0" />
-                    <p className="text-[#E0F2FE] text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <p className="text-cyan-300 text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {point}
                     </p>
                   </motion.div>
@@ -270,7 +280,9 @@ export default function Solutions() {
       </section>
 
       {/* Solutions CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -278,10 +290,10 @@ export default function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Let's Solve the Right Problem Together
               </h2>
-              <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 Whether you're improving operations, launching a new platform, or exploring AI adoption — we're ready to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -38,9 +38,14 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-[#FFFFFF] backdrop-blur-md shadow-md py-3 border-[#E2E8F0]"
-          : "bg-[#FFFFFF] py-5 border-[#E2E8F0]"
+          ? "bg-gradient-to-br from-[#0B0F14] via-[#0F1419] to-[#141A22] backdrop-blur-md shadow-lg shadow-cyan-500/10 py-3 border-cyan-500/20"
+          : "bg-gradient-to-br from-[#0B0F14] via-[#0F1419] to-[#141A22] py-5 border-cyan-500/20"
       )}
+      style={{
+        backgroundImage: isScrolled
+          ? "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.15) 0%, transparent 50%), linear-gradient(135deg, #0B0F14 0%, #0F1419 50%, #141A22 100%)"
+          : "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #0F1419 50%, #141A22 100%)"
+      }}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -66,8 +71,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative",
                   location.pathname === item.href
-                    ? "text-[#0EA5E9] font-semibold"
-                    : "text-[#0F172A] hover:text-[#0EA5E9] active:text-[#0EA5E9] active:font-semibold active:scale-95"
+                    ? "text-cyan-400 font-semibold"
+                    : "text-white/90 hover:text-cyan-400 active:text-cyan-400 active:font-semibold active:scale-95"
                 )}
               >
                 {item.name}
@@ -84,14 +89,14 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 active:scale-95 transition-all"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 active:bg-white/20 active:scale-95 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-[#0F172A]" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-[#0F172A]" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </nav>
@@ -105,7 +110,10 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#FFFFFF] border-t border-[#E2E8F0]"
+            className="lg:hidden bg-gradient-to-br from-[#0B0F14] via-[#0F1419] to-[#141A22] border-t border-cyan-500/20"
+            style={{
+              backgroundImage: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.15) 0%, transparent 50%), linear-gradient(135deg, #0B0F14 0%, #0F1419 50%, #141A22 100%)"
+            }}
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col gap-2">
@@ -116,8 +124,8 @@ export function Header() {
                     className={cn(
                       "px-4 py-3 rounded-lg text-base font-medium transition-all",
                       location.pathname === item.href
-                        ? "text-[#0EA5E9] font-semibold"
-                        : "text-[#0F172A] hover:text-[#0EA5E9] active:text-[#0EA5E9] active:font-semibold active:scale-95"
+                        ? "text-cyan-400 font-semibold"
+                        : "text-white/90 hover:text-cyan-400 active:text-cyan-400 active:font-semibold active:scale-95"
                     )}
                   >
                     {item.name}

@@ -28,7 +28,9 @@ const impacts = [
 
 export function ImpactSection() {
   return (
-    <section className="py-24 bg-hero-gradient relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{
+      background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+    }}>
       {/* Background decorations */}
       <div className="absolute inset-0">
         <motion.div
@@ -51,7 +53,7 @@ export function ImpactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-full mb-4 border border-white/20">
+          <span className="inline-block px-4 py-1.5 bg-cyan-500/20 backdrop-blur-sm text-cyan-300 text-sm font-medium rounded-full mb-4 border border-cyan-500/30">
             Our Early Impact
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
@@ -72,8 +74,8 @@ export function ImpactSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/20">
-                <impact.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+              <div className="w-16 h-16 bg-cyan-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                <impact.icon className="w-8 h-8 text-cyan-400" strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
                 {impact.title}
@@ -87,8 +89,9 @@ export function ImpactSection() {
 
         <div className="text-center">
           <Button 
+            variant="hero"
             size="lg" 
-            className="bg-white text-[#1E63E9] font-semibold hover:bg-white/90 hover:scale-105 active:scale-95 transition-all shadow-lg hover:shadow-xl"
+            className="hover:scale-105 active:scale-95 transition-all"
             asChild
           >
             <Link to="/impact">

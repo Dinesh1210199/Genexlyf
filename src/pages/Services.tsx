@@ -89,7 +89,9 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-hero-gradient">
+      <section className="pt-32 pb-20" style={{
+        background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -97,14 +99,14 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Technology That Works the Way You Do
             </h1>
-            <p className="text-lg md:text-xl text-[#E0F2FE] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
               At Genexlyf, we offer a flexible mix of software development, AI-powered services, and digital products. We work closely with our clients to understand their challenges and deliver solutions that are practical, scalable, and built for long-term growth.
             </p>
           </motion.div>
@@ -112,7 +114,9 @@ export default function Services() {
       </section>
 
       {/* Service Pillars */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="Service Pillars"
@@ -124,28 +128,28 @@ export default function Services() {
             {services.map((service, index) => (
               <AnimatedCard key={service.title} delay={index * 0.1} className="p-8">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-[#0D4BEF]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-8 h-8 text-[#0D4BEF]" />
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
+                    <service.icon className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-[#0F172A] mb-3">{service.title}</h3>
-                    <p className="text-[#5F6B7A] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                    <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                    <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                       {service.description}
                     </p>
                     <div className="mb-6">
-                      <p className="text-[#0F172A] font-semibold mb-3">What we do:</p>
+                      <p className="text-white font-semibold mb-3">What we do:</p>
                       <ul className="space-y-2">
                         {service.whatWeDo.map((item) => (
-                          <li key={item} className="flex items-start gap-2 text-[#475569]">
-                            <div className="w-1.5 h-1.5 bg-[#0D4BEF] rounded-full mt-2 flex-shrink-0" />
+                          <li key={item} className="flex items-start gap-2 text-[#C7D2E0]">
+                            <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                             <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-[#EAF2FF] rounded-lg p-4">
-                      <p className="text-[#0F172A] font-semibold mb-1">Why it matters:</p>
-                      <p className="text-[#475569]" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                    <div className="bg-cyan-500/10 rounded-lg p-4 border border-cyan-500/20">
+                      <p className="text-white font-semibold mb-1">Why it matters:</p>
+                      <p className="text-[#C7D2E0]" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                         {service.whyItMatters}
                       </p>
                     </div>
@@ -158,7 +162,9 @@ export default function Services() {
       </section>
 
       {/* How We Deliver */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="🤝 How We Deliver"
@@ -174,10 +180,10 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm"
+                  className="flex items-start gap-3 bg-gradient-to-br from-[#161E2E] to-[#1A2333] rounded-xl p-4 shadow-sm border border-cyan-500/20"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#0D4BEF] mt-0.5 flex-shrink-0" />
-                  <p className="text-[#0F172A] font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-white font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {principle}
                   </p>
                 </motion.div>
@@ -188,7 +194,9 @@ export default function Services() {
       </section>
 
       {/* Why Choose Genexlyf */}
-      <section className="py-24 bg-hero-gradient">
+      <section className="py-24" style={{
+        background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -196,11 +204,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-                <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
                 Why Choose Genexlyf
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#FFFFFF] mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
                 Our Advantage
               </h2>
               <div className="grid md:grid-cols-2 gap-4 mb-10 max-w-3xl mx-auto">
@@ -211,10 +219,10 @@ export default function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3"
+                    className="bg-cyan-500/20 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3 border border-cyan-500/30"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-[#22D3EE] flex-shrink-0" />
-                    <p className="text-[#E0F2FE] text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <p className="text-cyan-300 text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {point}
                     </p>
                   </motion.div>
@@ -226,7 +234,9 @@ export default function Services() {
       </section>
 
       {/* Services CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{
+        background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -234,10 +244,10 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Let's Build the Right Solution Together
               </h2>
-              <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 Have an idea, challenge, or requirement?<br />
                 We'll help you turn it into a working, scalable solution.
               </p>

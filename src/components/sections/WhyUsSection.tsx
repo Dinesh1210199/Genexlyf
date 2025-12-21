@@ -36,7 +36,9 @@ const reasons = [
 
 export function WhyUsSection() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24" style={{
+      background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
+    }}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -46,13 +48,13 @@ export function WhyUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full mb-4 border border-cyan-500/30">
               Why Genexlyf
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A0A0A] mb-6" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
               Why We Stand Apart
             </h2>
-            <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
               At Genexlyf, we combine deep technical expertise with a collaborative, human-first approach to deliver software, services, and products that truly move businesses forward.
             </p>
             
@@ -66,12 +68,12 @@ export function WhyUsSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-10 h-10 bg-[#1E63E9]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <reason.icon className="w-5 h-5 text-[#1E63E9]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
+                    <reason.icon className="w-5 h-5 text-cyan-400" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#0F172A] mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{reason.title}</h4>
-                    <p className="text-sm text-[#475569]" style={{ lineHeight: '1.5', fontFamily: 'Inter, sans-serif' }}>{reason.description}</p>
+                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{reason.title}</h4>
+                    <p className="text-sm text-[#C7D2E0]" style={{ lineHeight: '1.5', fontFamily: 'Inter, sans-serif' }}>{reason.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -88,23 +90,23 @@ export function WhyUsSection() {
           >
             <div className="aspect-square max-w-lg mx-auto relative">
               {/* Background pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/10 rounded-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 rounded-3xl" />
               
               {/* Animated rings */}
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute inset-8 border-2 border-primary/10 rounded-full"
+                className="absolute inset-8 border-2 border-cyan-500/20 rounded-full"
               />
               <motion.div
                 animate={{ scale: [1.05, 1, 1.05] }}
                 transition={{ duration: 5, repeat: Infinity }}
-                className="absolute inset-16 border-2 border-secondary/20 rounded-full"
+                className="absolute inset-16 border-2 border-cyan-400/30 rounded-full"
               />
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 6, repeat: Infinity }}
-                className="absolute inset-24 border-2 border-primary/15 rounded-full"
+                className="absolute inset-24 border-2 border-cyan-500/25 rounded-full"
               />
               
               {/* Center element */}
@@ -137,9 +139,9 @@ export function WhyUsSection() {
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md border border-gray-200"
+                className="absolute top-8 right-8 bg-cyan-500/20 backdrop-blur-sm px-4 py-2 rounded-full shadow-md border border-cyan-500/30"
               >
-                <span className="text-sm font-medium text-[#1E63E9]">AI-First</span>
+                <span className="text-sm font-medium text-cyan-400">AI-First</span>
               </motion.div>
               <motion.div
                 animate={{ y: [5, -5, 5] }}

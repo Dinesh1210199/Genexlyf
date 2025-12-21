@@ -82,7 +82,9 @@ export default function Products() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-hero-gradient">
+      <section className="pt-32 pb-20" style={{
+        background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -90,14 +92,14 @@ export default function Products() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-              <Sparkles className="w-4 h-4 text-[#22D3EE]" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Products
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Platforms Built for the Next Generation of Digital Operations
             </h1>
-            <p className="text-lg md:text-xl text-[#E0F2FE] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
               At Genexlyf, our products are designed to solve real operational and enterprise challenges. We build intelligent platforms that combine automation, security, AI, and scalability—ready to grow with modern organizations.
             </p>
           </motion.div>
@@ -105,7 +107,7 @@ export default function Products() {
       </section>
 
       {/* Product Philosophy */}
-      <section className="py-16 bg-background">
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -114,19 +116,19 @@ export default function Products() {
               viewport={{ once: true }}
             >
               <div className="text-center mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EAF2FF] text-[#1E63E9] text-sm font-medium rounded-full mb-4">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-sm font-medium rounded-full mb-4">
                   <Sparkles className="w-4 h-4" />
                   Product Philosophy
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Why We Build Products
                 </h2>
               </div>
               <div className="text-left">
-                <p className="text-lg text-[#5F6B7A] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-lg text-[#C7D2E0] mb-4 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   We build products to:
                 </p>
-                <ul className="space-y-2 text-[#5F6B7A] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <ul className="space-y-2 text-[#C7D2E0] mb-6 list-none" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
                     <span>Reduce operational complexity</span>
@@ -144,7 +146,7 @@ export default function Products() {
                     <span>Support long-term growth with minimal overhead</span>
                   </li>
                 </ul>
-                <p className="text-[#5F6B7A] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                   Each product is crafted with enterprise architecture, AI-readiness, and real-world usability in mind.
                 </p>
               </div>
@@ -154,33 +156,33 @@ export default function Products() {
       </section>
 
       {/* Products */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <div className="space-y-16 max-w-6xl mx-auto">
             {products.map((product, index) => (
               <AnimatedCard key={product.name} delay={index * 0.1} className="p-8 lg:p-12">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-[#0D4BEF]/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <product.icon className="w-8 h-8 text-[#0D4BEF]" />
+                  <div className="w-16 h-16 bg-cyan-500/20 border border-cyan-500/30 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <product.icon className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A]">{product.name}</h3>
-                      <Badge className="bg-[#EAF2FF] text-[#1E63E9] border-none">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">{product.name}</h3>
+                      <Badge className="bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 border-none">
                         {product.statusEmoji} {product.status}
                       </Badge>
                     </div>
-                    <p className="text-[#5F6B7A] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                       {product.description}
                     </p>
                     
                     {product.keyCapabilities && (
                       <div className="mb-6">
-                        <h4 className="text-[#0F172A] font-semibold mb-4">🔹 Key Capabilities</h4>
+                        <h4 className="text-white font-semibold mb-4">🔹 Key Capabilities</h4>
                         <ul className="space-y-3">
                           {product.keyCapabilities.map((capability, idx) => (
-                            <li key={idx} className="flex items-start gap-3 text-[#475569]">
-                              <div className="w-1.5 h-1.5 bg-[#0D4BEF] rounded-full mt-2 flex-shrink-0" />
+                            <li key={idx} className="flex items-start gap-3 text-[#C7D2E0]">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                               <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{capability}</span>
                             </li>
                           ))}
@@ -190,11 +192,11 @@ export default function Products() {
 
                     {product.highlights && (
                       <div className="mb-6">
-                        <h4 className="text-[#0F172A] font-semibold mb-4">Highlights:</h4>
+                        <h4 className="text-white font-semibold mb-4">Highlights:</h4>
                         <ul className="space-y-2">
                           {product.highlights.map((highlight, idx) => (
-                            <li key={idx} className="flex items-start gap-3 text-[#475569]">
-                              <div className="w-1.5 h-1.5 bg-[#0D4BEF] rounded-full mt-2 flex-shrink-0" />
+                            <li key={idx} className="flex items-start gap-3 text-[#C7D2E0]">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                               <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{highlight}</span>
                             </li>
                           ))}
@@ -203,12 +205,12 @@ export default function Products() {
                     )}
 
                     {product.useCases && (
-                      <div className="bg-[#EAF2FF] rounded-lg p-4">
-                        <h4 className="text-[#0F172A] font-semibold mb-3">🔹 Use Cases</h4>
+                      <div className="bg-cyan-500/20 border border-cyan-500/30 rounded-lg p-4">
+                        <h4 className="text-white font-semibold mb-3">🔹 Use Cases</h4>
                         <ul className="space-y-2">
                           {product.useCases.map((useCase, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-[#475569]">
-                              <div className="w-1.5 h-1.5 bg-[#1E63E9] rounded-full mt-2 flex-shrink-0" />
+                            <li key={idx} className="flex items-start gap-2 text-[#C7D2E0]">
+                              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
                               <span style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>{useCase}</span>
                             </li>
                           ))}
@@ -224,7 +226,7 @@ export default function Products() {
       </section>
 
       {/* Product Architecture Principles */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24" style={{ background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="🧩 Product Architecture Principles"
@@ -240,10 +242,10 @@ export default function Products() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm"
+                  className="flex items-start gap-3 bg-gradient-to-br from-[#161E2E] to-[#1A2333] border border-cyan-500/20 rounded-xl p-4 shadow-sm"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#0D4BEF] mt-0.5 flex-shrink-0" />
-                  <p className="text-[#0F172A] font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                  <p className="text-white font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {principle}
                   </p>
                 </motion.div>
@@ -254,7 +256,7 @@ export default function Products() {
       </section>
 
       {/* Product Roadmap */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="🛣 Product Roadmap (Safe for Startup)"
@@ -270,10 +272,10 @@ export default function Products() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-[#EAF2FF] rounded-xl p-4"
+                  className="flex items-start gap-3 bg-cyan-500/20 border border-cyan-500/30 rounded-xl p-4"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#1E63E9] rounded-full mt-2 flex-shrink-0" />
-                  <p className="text-[#0F172A] font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                  <p className="text-white font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {item}
                   </p>
                 </motion.div>
@@ -284,7 +286,9 @@ export default function Products() {
       </section>
 
       {/* Who Our Products Are For */}
-      <section className="py-24 bg-hero-gradient">
+      <section className="py-24" style={{
+        background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
+      }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -292,8 +296,8 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#E0F2FE] text-sm font-medium mb-6 border border-[#38BDF8]/30">
-                <Users className="w-4 h-4 text-[#22D3EE]" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-[#161E2E] to-[#1A2333] border border-cyan-500/20/10 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
+                <Users className="w-4 h-4 text-cyan-400" />
                 🤝 Who Our Products Are For
               </span>
               <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
@@ -304,10 +308,10 @@ export default function Products() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3"
+                    className="bg-gradient-to-br from-[#161E2E] to-[#1A2333] border border-cyan-500/20/10 backdrop-blur-sm rounded-xl p-4 flex items-center gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-[#22D3EE] flex-shrink-0" />
-                    <p className="text-[#E0F2FE] text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                    <p className="text-cyan-300 text-left font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {target}
                     </p>
                   </motion.div>
@@ -319,7 +323,7 @@ export default function Products() {
       </section>
 
       {/* Products CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -327,10 +331,10 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Interested in Early Access or Collaboration?
               </h2>
-              <p className="text-lg text-[#5F6B7A] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 We're actively building and evolving our platforms.<br />
                 If you'd like to explore early access, partnerships, or custom extensions:
               </p>

@@ -30,7 +30,9 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24" style={{
+      background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
+    }}>
       <div className="container mx-auto px-4">
         <SectionHeader
           badge="What We Do"
@@ -45,20 +47,20 @@ export function ServicesPreview() {
               delay={index * 0.1}
               className="hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-[#1E63E9]/10 rounded-xl flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-[#1E63E9]" />
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 border border-cyan-500/30">
+                <service.icon className="w-6 h-6 text-cyan-400" />
               </div>
-              <h3 className="text-xl font-semibold text-[#0F172A] mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{service.title}</h3>
-              <p className="text-[#475569] text-sm" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{service.title}</h3>
+              <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
             </AnimatedCard>
           ))}
         </div>
 
         <div className="text-center">
           <Button 
-            variant="default" 
+            variant="hero" 
             size="lg" 
-            className="bg-gradient-to-r from-[#1E63E9] to-[#22C1FF] text-white font-semibold hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
+            className="hover:scale-105 active:scale-95 transition-all"
             asChild
           >
             <Link to="/services">
