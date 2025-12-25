@@ -82,7 +82,7 @@ export default function Products() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20" style={{
+      <section className="pt-32 pb-16" style={{
         background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -96,10 +96,10 @@ export default function Products() {
               <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Products
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-2" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Platforms Built for the Next Generation of Digital Operations
             </h1>
-            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
+            <p className="text-base md:text-lg text-[#C7D2E0] leading-relaxed">
               At Genexlyf, our products are designed to solve real operational and enterprise challenges. We build intelligent platforms that combine automation, security, AI, and scalability—ready to grow with modern organizations.
             </p>
           </motion.div>
@@ -120,7 +120,7 @@ export default function Products() {
                   <Sparkles className="w-4 h-4" />
                   Product Philosophy
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   Why We Build Products
                 </h2>
               </div>
@@ -156,7 +156,7 @@ export default function Products() {
       </section>
 
       {/* Products */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <div className="space-y-16 max-w-6xl mx-auto">
             {products.map((product, index) => (
@@ -167,7 +167,7 @@ export default function Products() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">{product.name}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-white">{product.name}</h3>
                       <Badge className="bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 border-none flex items-center gap-1.5">
                         {product.statusIcon && <product.statusIcon className="w-3.5 h-3.5" />}
                         {product.status}
@@ -233,7 +233,7 @@ export default function Products() {
       </section>
 
       {/* Product Architecture Principles */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="Product Architecture Principles"
@@ -264,7 +264,7 @@ export default function Products() {
       </section>
 
       {/* Product Roadmap */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
             badge="Product Roadmap (Safe for Startup)"
@@ -332,7 +332,7 @@ export default function Products() {
       </section>
 
       {/* Products CTA */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -340,7 +340,7 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Interested in Early Access or Collaboration?
               </h2>
               <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>

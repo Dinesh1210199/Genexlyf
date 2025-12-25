@@ -89,7 +89,7 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20" style={{
+      <section className="pt-32 pb-16" style={{
         background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -103,10 +103,10 @@ export default function Services() {
               <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-2" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Technology That Works the Way You Do
             </h1>
-            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
+            <p className="text-base md:text-lg text-[#C7D2E0] leading-relaxed">
               At Genexlyf, we offer a flexible mix of software development, AI-powered services, and digital products. We work closely with our clients to understand their challenges and deliver solutions that are practical, scalable, and built for long-term growth.
             </p>
           </motion.div>
@@ -114,7 +114,7 @@ export default function Services() {
       </section>
 
       {/* Service Pillars */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -132,7 +132,7 @@ export default function Services() {
                     <service.icon className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                     <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                       {service.description}
                     </p>
@@ -162,7 +162,7 @@ export default function Services() {
       </section>
 
       {/* How We Deliver */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -194,7 +194,7 @@ export default function Services() {
       </section>
 
       {/* Why Choose Genexlyf */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -208,7 +208,7 @@ export default function Services() {
                 <Sparkles className="w-4 h-4 text-cyan-400" />
                 Why Choose Genexlyf
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-8" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
                 Our Advantage
               </h2>
               <div className="grid md:grid-cols-2 gap-4 mb-10 max-w-3xl mx-auto">
@@ -234,7 +234,7 @@ export default function Services() {
       </section>
 
       {/* Services CTA */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -244,7 +244,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Let's Build the Right Solution Together
               </h2>
               <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>

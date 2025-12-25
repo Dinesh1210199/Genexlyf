@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="py-24" style={{
+    <section className="py-16" style={{
       background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
     }}>
       <div className="container mx-auto px-4">
@@ -16,10 +16,10 @@ export function CTASection() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Organization?
           </h2>
-          <p className="text-lg text-[#C7D2E0] mb-10 max-w-2xl mx-auto">
+          <p className="text-base text-[#C7D2E0] mb-10 max-w-2xl mx-auto">
             Let's start a conversation about how AI and automation can drive your success. 
             We're here to help you grow smarter, faster, and stronger.
           </p>

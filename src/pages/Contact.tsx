@@ -93,7 +93,7 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20" style={{
+      <section className="pt-32 pb-16" style={{
         background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -103,10 +103,10 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-2" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Contact Us
             </h1>
-            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-[#C7D2E0] leading-relaxed mb-4">
               Let's Build Something Meaningful
             </p>
             <p className="text-lg text-[#C7D2E0] leading-relaxed">
@@ -139,7 +139,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -324,7 +324,7 @@ export default function Contact() {
       </section>
 
       {/* What Happens Next */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">

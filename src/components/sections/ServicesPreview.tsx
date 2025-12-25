@@ -30,7 +30,7 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-24" style={{
+    <section className="py-16" style={{
       background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
     }}>
       <div className="container mx-auto px-4">
@@ -47,10 +47,29 @@ export function ServicesPreview() {
               delay={index * 0.1}
               className="hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 border border-cyan-500/30">
-                <service.icon className="w-6 h-6 text-cyan-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{service.title}</h3>
+              <motion.div 
+                className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 border border-cyan-500/30 relative overflow-hidden group"
+                whileHover={{ scale: 1.15, rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-cyan-500/40 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  animate={{
+                    rotate: [0, 360],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatDelay: 0,
+                  }}
+                />
+                <motion.div
+                  className="absolute inset-0 bg-cyan-500/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <service.icon className="w-6 h-6 text-cyan-400 relative z-10 group-hover:text-cyan-300 transition-colors" />
+              </motion.div>
+              <h3 className="text-lg font-semibold text-white mb-2" style={{ fontFamily: 'Space Grotesk, Inter, sans-serif' }}>{service.title}</h3>
               <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
             </AnimatedCard>
           ))}

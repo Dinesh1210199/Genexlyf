@@ -49,7 +49,7 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20" style={{
+      <section className="pt-32 pb-16" style={{
         background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -63,10 +63,10 @@ export default function About() {
               <Sparkles className="w-4 h-4 text-cyan-400" />
               About Genexlyf
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFFFFF] mb-6 px-2" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               Generation Next Life Technology
             </h1>
-            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
+            <p className="text-base md:text-lg text-[#C7D2E0] leading-relaxed">
               Genexlyf is a next-generation hybrid IT venture focused on building intelligent software, scalable services, and future-ready digital products. We blend AI, automation, and modern engineering to help businesses grow smarter, faster, and stronger in an ever-evolving digital world.
             </p>
           </motion.div>
@@ -74,7 +74,7 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -96,7 +96,7 @@ export default function About() {
                 <p className="text-lg">
                   Genexlyf was founded with a simple but powerful idea:
                 </p>
-                <p className="text-lg font-medium text-white">
+                <p className="text-base font-medium text-white">
                   Technology should not just solve problems — it should improve lives and enable growth.
                 </p>
                 <p className="text-lg">
@@ -120,7 +120,7 @@ export default function About() {
                   >
                     <Sparkles className="w-10 h-10 text-cyan-400" />
                   </motion.div>
-                  <p className="text-lg font-semibold text-white">Since 2025</p>
+                  <p className="text-base font-semibold text-white">Since 2025</p>
                 </div>
               </div>
             </motion.div>
@@ -129,7 +129,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -139,7 +139,7 @@ export default function About() {
                 <Target className="w-7 h-7 text-cyan-400" />
               </div>
               <span className="inline-block text-sm font-medium text-cyan-400 mb-2">Our Mission</span>
-              <h3 className="text-2xl font-bold text-white mb-4">What We Aim to Do</h3>
+              <h3 className="text-xl font-bold text-white mb-4">What We Aim to Do</h3>
               <p className="text-[#C7D2E0] leading-relaxed mb-4" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 Our mission is to empower organizations through AI-driven software, automation, and digital products that simplify complexity and unlock long-term value.
               </p>
@@ -155,7 +155,7 @@ export default function About() {
                 <Compass className="w-7 h-7 text-cyan-400" />
               </div>
               <span className="inline-block text-sm font-medium text-cyan-400 mb-2">Our Vision</span>
-              <h3 className="text-2xl font-bold text-white mb-4">Where We're Headed</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Where We're Headed</h3>
               <p className="text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                 We envision a future where AI and automation seamlessly work alongside human intelligence, enabling businesses to operate efficiently, innovate continuously, and grow sustainably.
               </p>
@@ -168,7 +168,7 @@ export default function About() {
       </section>
 
       {/* What We Do */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -185,7 +185,7 @@ export default function About() {
                   <div className="w-14 h-14 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/30">
                     <capability.icon className="w-7 h-7 text-cyan-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{capability.title}</h3>
+                  <h3 className="text-lg font-bold text-white mb-3">{capability.title}</h3>
                   <p className="text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                     {capability.description}
                   </p>
@@ -197,7 +197,7 @@ export default function About() {
       </section>
 
       {/* How We Work */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -234,7 +234,7 @@ export default function About() {
       </section>
 
       {/* Founders */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -249,9 +249,9 @@ export default function About() {
               <AnimatedCard key={founder.name} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-cyan-500/30">
-                    <span className="text-3xl font-bold text-cyan-400">{founder.name[0]}</span>
+                    <span className="text-2xl font-bold text-cyan-400">{founder.name[0]}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">{founder.name}</h3>
                   <p className="text-cyan-400 font-semibold text-sm mb-4">{founder.role}</p>
                   <p className="text-[#C7D2E0] leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
                     {founder.description}
@@ -264,7 +264,7 @@ export default function About() {
       </section>
 
       {/* Why Genexlyf */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">

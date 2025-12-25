@@ -7,14 +7,33 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem",
+        xl: "2rem",
+        "2xl": "2rem",
+      },
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "sans-serif"],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1.5' }],
+        'sm': ['0.875rem', { lineHeight: '1.5' }],
+        'base': ['0.9375rem', { lineHeight: '1.6' }],
+        'lg': ['1rem', { lineHeight: '1.6' }],
+        'xl': ['1.125rem', { lineHeight: '1.6' }],
+        '2xl': ['1.375rem', { lineHeight: '1.4' }],
+        '3xl': ['1.75rem', { lineHeight: '1.3' }],
+        '4xl': ['2.125rem', { lineHeight: '1.2' }],
+        '5xl': ['2.5rem', { lineHeight: '1.2' }],
+        '6xl': ['3rem', { lineHeight: '1.1' }],
       },
       colors: {
         border: "hsl(var(--border))",

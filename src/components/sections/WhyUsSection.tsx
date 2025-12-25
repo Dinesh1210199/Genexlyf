@@ -36,7 +36,7 @@ const reasons = [
 
 export function WhyUsSection() {
   return (
-    <section className="py-24" style={{
+    <section className="py-16" style={{
       background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
     }}>
       <div className="container mx-auto px-4">
@@ -51,10 +51,10 @@ export function WhyUsSection() {
             <span className="inline-block px-4 py-1.5 bg-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full mb-4 border border-cyan-500/30">
               Why Genexlyf
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Space Grotesk, Inter, sans-serif' }}>
               Why We Stand Apart
             </h2>
-            <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-base text-[#C7D2E0] mb-8" style={{ lineHeight: '1.6', fontFamily: 'Inter, sans-serif' }}>
               At Genexlyf, we combine deep technical expertise with a collaborative, human-first approach to deliver software, services, and products that truly move businesses forward.
             </p>
             
@@ -68,11 +68,18 @@ export function WhyUsSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-cyan-500/30">
-                    <reason.icon className="w-5 h-5 text-cyan-400" strokeWidth={1.5} />
-                  </div>
+                  <motion.div 
+                    className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-cyan-500/30 relative overflow-hidden group"
+                    whileHover={{ scale: 1.2, rotate: 180 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-cyan-500/50 to-blue-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                    <reason.icon className="w-5 h-5 text-cyan-400 relative z-10 group-hover:text-cyan-300 transition-colors" strokeWidth={1.5} />
+                  </motion.div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>{reason.title}</h4>
+                    <h4 className="font-semibold text-white mb-1 text-sm" style={{ fontFamily: 'Space Grotesk, Inter, sans-serif' }}>{reason.title}</h4>
                     <p className="text-sm text-[#C7D2E0]" style={{ lineHeight: '1.5', fontFamily: 'Inter, sans-serif' }}>{reason.description}</p>
                   </div>
                 </motion.div>

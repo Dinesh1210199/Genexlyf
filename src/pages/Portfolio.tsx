@@ -86,7 +86,7 @@ export default function Portfolio() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20" style={{
+      <section className="pt-32 pb-16" style={{
         background: "radial-gradient(ellipse at top, rgba(6, 182, 212, 0.2) 0%, transparent 60%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -100,10 +100,10 @@ export default function Portfolio() {
               <Sparkles className="w-4 h-4 text-cyan-400" />
               Our Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-2" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}>
               What We're Building & Delivering
             </h1>
-            <p className="text-lg md:text-xl text-[#C7D2E0] leading-relaxed">
+            <p className="text-base md:text-lg text-[#C7D2E0] leading-relaxed">
               At Genexlyf, our portfolio reflects our journey — from early-stage solutions and internal platforms to custom-built systems for real-world problems. As a growing startup, we focus on quality, architecture, and long-term impact over volume.
             </p>
           </motion.div>
@@ -155,7 +155,7 @@ export default function Portfolio() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -173,7 +173,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
-                      <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                      <h3 className="text-xl font-bold text-white flex items-center gap-2">
                         <Sparkles className="w-5 h-5 text-cyan-400" />
                         {project.title}
                       </h3>
@@ -205,7 +205,7 @@ export default function Portfolio() {
       </section>
 
       {/* Case Study Style */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #121826 0%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -254,7 +254,7 @@ export default function Portfolio() {
       </section>
 
       {/* Early-Stage Honesty */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
       }}>
         <div className="container mx-auto px-4">
@@ -298,7 +298,7 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio CTA */}
-      <section className="py-24" style={{
+      <section className="py-16" style={{
         background: "radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%), linear-gradient(135deg, #0B0F14 0%, #121826 50%, #141A22 100%)"
       }}>
         <div className="container mx-auto px-4">

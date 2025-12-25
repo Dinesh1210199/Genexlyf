@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function StorySection() {
   return (
-    <section className="py-24" style={{
+    <section className="py-16" style={{
       background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)"
     }}>
       <div className="container mx-auto px-4">
@@ -21,10 +21,10 @@ export function StorySection() {
               <Sparkles className="w-4 h-4" />
               Who We Are
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 leading-tight" style={{ fontFamily: 'Space Grotesk, Inter, sans-serif' }}>
               Generation Next Life Technology
             </h2>
-            <p className="text-lg text-[#C7D2E0] mb-6" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
+            <p className="text-base text-[#C7D2E0] mb-6" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
               Genexlyf is a hybrid IT venture delivering intelligent software, services, and digital products. We work closely with our clients to understand their real needs and transform them into AI-powered, scalable solutions that simplify work, enhance lives, and drive meaningful business growth.
             </p>
             <p className="text-lg text-[#C7D2E0] mb-8" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
