@@ -19,23 +19,55 @@
 // Replace 'Sheet1' with your actual sheet name
 const SHEET_NAME = 'Sheet1';
 
+// Handle GET requests (for testing/debugging when URL is accessed in browser)
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({
+    success: true,
+    message: 'Contact Form Handler is running. Use POST to submit forms.',
+    instructions: 'This endpoint accepts POST requests with form data.'
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Handle POST requests (actual form submissions)
 function doPost(e) {
   try {
-    // Parse the incoming data
-    const data = JSON.parse(e.postData.contents);
+    // Parse the incoming data - handle both JSON and form-encoded data
+    let data;
+    if (e.postData && e.postData.contents) {
+      try {
+        // Try JSON first
+        data = JSON.parse(e.postData.contents);
+      } catch (parseError) {
+        // If JSON fails, try form-encoded data
+        data = {
+          name: e.parameter.name || '',
+          email: e.parameter.email || '',
+          company: e.parameter.company || '',
+          phone: e.parameter.phone || '',
+          subject: e.parameter.subject || '',
+          message: e.parameter.message || ''
+        };
+      }
+    } else {
+      // Fallback to parameter-based data
+      data = {
+        name: e.parameter.name || '',
+        email: e.parameter.email || '',
+        company: e.parameter.company || '',
+        phone: e.parameter.phone || '',
+        subject: e.parameter.subject || '',
+        message: e.parameter.message || ''
+      };
+    }
     
     // Get the active spreadsheet
-    const sheet = SpreadsheetApp.openById('1V1DmccnR179wSOU0bZ7YMcBk0Z1TLMVh8WJ6buIpQu8')
-      .getSheetByName(SHEET_NAME);
+    const ss = SpreadsheetApp.openById('1V1DmccnR179wSOU0bZ7YMcBk0Z1TLMVh8WJ6buIpQu8');
+    let sheet = ss.getSheetByName(SHEET_NAME);
     
     // If sheet doesn't exist, create it
     if (!sheet) {
-      const ss = SpreadsheetApp.openById('1V1DmccnR179wSOU0bZ7YMcBk0Z1TLMVh8WJ6buIpQu8');
-      const newSheet = ss.insertSheet(SHEET_NAME);
-      // Add headers
-      newSheet.appendRow(['Timestamp', 'Name', 'Email', 'Company', 'Phone', 'Subject', 'Message']);
-      return ContentService.createTextOutput(JSON.stringify({ success: false, error: 'Sheet created. Please try again.' }))
-        .setMimeType(ContentService.MimeType.JSON);
+      sheet = ss.insertSheet(SHEET_NAME);
+      sheet.appendRow(['Timestamp', 'Name', 'Email', 'Company', 'Phone', 'Subject', 'Message']);
     }
     
     // Check if headers exist, if not add them
@@ -46,7 +78,7 @@ function doPost(e) {
     // Get current timestamp
     const timestamp = new Date();
     
-    // Prepare row data
+    // Prepare row data with safe defaults
     const rowData = [
       timestamp,
       data.name || '',
@@ -97,6 +129,10 @@ Submitted at: ${timestamp}
     })).setMimeType(ContentService.MimeType.JSON);
     
   } catch (error) {
+    // Log the error for debugging
+    Logger.log('Error in doPost: ' + error.toString());
+    Logger.log('Error stack: ' + error.stack);
+    
     // Return error response
     return ContentService.createTextOutput(JSON.stringify({
       success: false,

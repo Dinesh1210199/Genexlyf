@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Replace this URL with your Google Apps Script Web App URL after deployment
 // Get it from: Deploy > Manage deployments > Copy the Web App URL
-const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbz5nvU9ums5ob-BlkDEe0RZdcH3DgtrubveXtjHwDqAn0cdpEJX5WE1KqaE3q4r5hHk/exec';
 
 export default function Contact() {
   const { toast } = useToast();
@@ -27,7 +27,12 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Debug: Log the URL to console
+    console.log('Google Script URL:', GOOGLE_SCRIPT_URL);
+    console.log('Form Data:', formData);
+    
     if (!GOOGLE_SCRIPT_URL) {
+      console.error('GOOGLE_SCRIPT_URL is empty or not set');
       toast({
         title: "Configuration Error",
         description: "Form submission URL is not configured. Please contact the administrator.",
@@ -39,17 +44,29 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
+      console.log('Sending request to:', GOOGLE_SCRIPT_URL);
+      
+      // Submit form data as JSON to Google Apps Script
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // Google Apps Script requires no-cors for public web apps
+        mode: 'no-cors', // Required for Google Apps Script public web apps
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
-      // With no-cors, we can't read the response, so we assume success
-      // The Google Apps Script will handle the submission
+      console.log('Request sent (no-cors mode, cannot read response)');
+      
+      // Note: If you see a 401 error in console, the Web App deployment
+      // needs to be set to "Anyone" can access (not "Only myself")
+      // Go to: Deploy → Manage deployments → Edit → Set "Who has access" to "Anyone"
+      
+      // With no-cors mode, we can't read the response, but the request is sent
+      // The Google Apps Script will handle the submission and send email
+      // Add a small delay to ensure request is processed
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       toast({
         title: "Message Sent!",
         description: "We'll get back to you within 24 hours.",
