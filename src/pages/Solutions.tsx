@@ -299,13 +299,13 @@ export default function Solutions() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Talk to Us
+                    Talk to Us
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <Link to="/products">
-                    👉 Explore Our Platforms
+                    Explore Our Platforms
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>

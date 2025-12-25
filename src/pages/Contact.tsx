@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Lock, Loader2, FileText, MessageSquare, Handshake } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,8 +8,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
+// Replace this URL with your Google Apps Script Web App URL after deployment
+// Get it from: Deploy > Manage deployments > Copy the Web App URL
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+
 export default function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,13 +24,49 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+    
+    if (!GOOGLE_SCRIPT_URL) {
+      toast({
+        title: "Configuration Error",
+        description: "Form submission URL is not configured. Please contact the administrator.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Google Apps Script requires no-cors for public web apps
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // With no-cors, we can't read the response, so we assume success
+      // The Google Apps Script will handle the submission
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us directly at hello@genexlyf.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -100,7 +141,7 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>📧 Email</h4>
+                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>Email</h4>
                     <a href="mailto:hello@genexlyf.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                       hello@genexlyf.com
                     </a>
@@ -112,7 +153,7 @@ export default function Contact() {
                     <Phone className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>📱 Phone / WhatsApp</h4>
+                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>Phone / WhatsApp</h4>
                     <a href="https://wa.me/918637656625" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                       +91-8637656625
                     </a>
@@ -125,9 +166,9 @@ export default function Contact() {
                     <MapPin className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>📍 Location</h4>
+                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>Location</h4>
                     <p className="text-[#C7D2E0]">India</p>
-                    <p className="text-sm text-[#C7D2E0] mt-1">Working with clients globally 🌍</p>
+                    <p className="text-sm text-[#C7D2E0] mt-1">Working with clients globally</p>
                   </div>
                 </div>
 
@@ -136,7 +177,7 @@ export default function Contact() {
                     <Clock className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>⏱ Response Time</h4>
+                    <h4 className="font-semibold text-white mb-1" style={{ fontFamily: 'Poppins, Satoshi, Inter, sans-serif' }}>Response Time</h4>
                     <p className="text-[#C7D2E0]">Usually within 24 hours</p>
                   </div>
                 </div>
@@ -241,11 +282,23 @@ export default function Contact() {
                   variant="hero"
                   size="lg" 
                   className="w-full hover:scale-105 active:scale-95 transition-all"
+                  disabled={isSubmitting}
                 >
-                  🚀 Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
-                <p className="text-xs text-[#8FA3BF] text-center mt-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  🔐 We respect your privacy. Your information will only be used to respond to your enquiry — no spam, ever.
+                <p className="text-xs text-[#8FA3BF] text-center mt-3 flex items-center justify-center gap-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <Lock className="w-3 h-3" />
+                  We respect your privacy. Your information will only be used to respond to your enquiry — no spam, ever.
                 </p>
               </form>
             </motion.div>
@@ -272,19 +325,19 @@ export default function Contact() {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl font-bold text-cyan-400">1️⃣</span>
+                    <FileText className="w-8 h-8 text-cyan-400" />
                   </div>
                   <h3 className="font-semibold text-white mb-2">We review your message</h3>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl font-bold text-cyan-400">2️⃣</span>
+                    <MessageSquare className="w-8 h-8 text-cyan-400" />
                   </div>
                   <h3 className="font-semibold text-white mb-2">One of our people gets back to you</h3>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl font-bold text-cyan-400">3️⃣</span>
+                    <Handshake className="w-8 h-8 text-cyan-400" />
                   </div>
                   <h3 className="font-semibold text-white mb-2">We discuss next steps (call / demo / idea validation)</h3>
                 </div>

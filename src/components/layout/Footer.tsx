@@ -97,18 +97,18 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#22C1FF] mt-0.5" />
                 <a href="mailto:hello@genexlyf.com" className="text-[#C7D2E0] hover:text-cyan-400 transition-colors">
-                  📧 hello@genexlyf.com
+                  hello@genexlyf.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-cyan-400 mt-0.5" />
                 <a href="https://wa.me/918637656625" className="text-[#C7D2E0] hover:text-cyan-400 transition-colors">
-                  📱 +91-8637656625
+                  +91-8637656625
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-cyan-400 mt-0.5" />
-                <span className="text-[#C7D2E0]">📍 India (Serving Globally)</span>
+                <span className="text-[#C7D2E0]">India (Serving Globally)</span>
               </li>
             </ul>
           </div>

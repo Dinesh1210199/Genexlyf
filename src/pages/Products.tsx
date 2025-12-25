@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Zap, School, Sparkles, CheckCircle2, Building2, Shield, Users, Cog } from "lucide-react";
+import { ArrowRight, Mail, Zap, School, Sparkles, CheckCircle2, Building2, Shield, Users, Cog, Wrench, Clipboard, Puzzle, Route, Settings, UserCog } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,7 @@ const products = [
     icon: Mail,
     name: "Genexlyf Mail & Tenant Intelligence Platform",
     status: "In Active Development",
-    statusEmoji: "🚧",
+    statusIcon: Wrench,
     description: "A secure, multi-tenant platform designed to help organizations manage users, control access, and gain intelligence from email data—without compromising privacy or compliance.",
     keyCapabilities: [
       "Multi-Tenant Architecture - Manage multiple organizations, departments, or clients from a single platform.",
@@ -45,7 +45,7 @@ const products = [
     icon: School,
     name: "Genexlyf CampusFlow",
     status: "Planned / In Development",
-    statusEmoji: "📋",
+    statusIcon: Clipboard,
     description: "An intelligent platform designed for educational institutions and structured organizations to manage operations, engagement, and analytics efficiently.",
     highlights: [
       "Administrative automation",
@@ -168,8 +168,9 @@ export default function Products() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3">
                       <h3 className="text-2xl md:text-3xl font-bold text-white">{product.name}</h3>
-                      <Badge className="bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 border-none">
-                        {product.statusEmoji} {product.status}
+                      <Badge className="bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 border-none flex items-center gap-1.5">
+                        {product.statusIcon && <product.statusIcon className="w-3.5 h-3.5" />}
+                        {product.status}
                       </Badge>
                     </div>
                     <p className="text-[#C7D2E0] mb-6 leading-relaxed" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
@@ -178,7 +179,10 @@ export default function Products() {
                     
                     {product.keyCapabilities && (
                       <div className="mb-6">
-                        <h4 className="text-white font-semibold mb-4">🔹 Key Capabilities</h4>
+                        <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-cyan-400" />
+                          Key Capabilities
+                        </h4>
                         <ul className="space-y-3">
                           {product.keyCapabilities.map((capability, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-[#C7D2E0]">
@@ -206,7 +210,10 @@ export default function Products() {
 
                     {product.useCases && (
                       <div className="bg-cyan-500/20 border border-cyan-500/30 rounded-lg p-4">
-                        <h4 className="text-white font-semibold mb-3">🔹 Use Cases</h4>
+                        <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-cyan-400" />
+                          Use Cases
+                        </h4>
                         <ul className="space-y-2">
                           {product.useCases.map((useCase, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-[#C7D2E0]">
@@ -229,7 +236,8 @@ export default function Products() {
       <section className="py-24" style={{ background: "linear-gradient(135deg, #0B0F14 0%, #121826 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🧩 Product Architecture Principles"
+            badge="Product Architecture Principles"
+            badgeIcon={Puzzle}
             title="How Our Products Are Built"
             description="All Genexlyf products follow these core principles:"
           />
@@ -259,7 +267,8 @@ export default function Products() {
       <section className="py-24" style={{ background: "linear-gradient(135deg, #121826 0%, #141A22 100%)" }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🛣 Product Roadmap (Safe for Startup)"
+            badge="Product Roadmap (Safe for Startup)"
+            badgeIcon={Route}
             title="What's Coming Next"
             description="(Roadmap evolves based on real customer needs.)"
           />
@@ -298,7 +307,7 @@ export default function Products() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-[#161E2E] to-[#1A2333] border border-cyan-500/20/10 backdrop-blur-sm rounded-full text-cyan-300 text-sm font-medium mb-6 border border-cyan-500/30">
                 <Users className="w-4 h-4 text-cyan-400" />
-                🤝 Who Our Products Are For
+                Who Our Products Are For
               </span>
               <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
                 {whoProductsAreFor.map((target, index) => (
@@ -341,13 +350,13 @@ export default function Products() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Talk to Us
+                    Talk to Us
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Request a Demo
+                    Request a Demo
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Compass, Users, Code2, Zap, Brain, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Target, Compass, Users, Code2, Zap, Brain, CheckCircle2, Sparkles, Settings, UserCog } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -97,7 +97,7 @@ export default function About() {
                   Genexlyf was founded with a simple but powerful idea:
                 </p>
                 <p className="text-lg font-medium text-white">
-                  👉 Technology should not just solve problems — it should improve lives and enable growth.
+                  Technology should not just solve problems — it should improve lives and enable growth.
                 </p>
                 <p className="text-lg">
                   What started as a vision to build meaningful, intelligent systems has grown into a venture that collaborates closely with businesses to design solutions tailored to real-world challenges. From early concepts to scalable platforms, our journey is driven by curiosity, execution, and impact.
@@ -173,7 +173,8 @@ export default function About() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="⚙️ What We Do (Hybrid IT Positioning)"
+            badge="What We Do (Hybrid IT Positioning)"
+            badgeIcon={Settings}
             title="Our Capabilities"
             description="At Genexlyf, we operate across three core pillars:"
           />
@@ -201,7 +202,7 @@ export default function About() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🤝 How We Work"
+            badge="How We Work"
             title="Our Approach"
             description="We believe the best technology is built through collaboration."
           />
@@ -238,7 +239,8 @@ export default function About() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="👨‍💻 Founders Section"
+            badge="Founders Section"
+            badgeIcon={UserCog}
             title="Meet the Founders"
             description="The minds behind Genexlyf's vision and execution."
           />

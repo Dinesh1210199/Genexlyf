@@ -174,7 +174,7 @@ export default function Team() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🤝 How We Work As A Team"
+            badge="How We Work As A Team"
             title="Founder-Led Execution"
             description="This approach allows us to deliver high-quality solutions with clarity and trust."
           />
@@ -248,7 +248,7 @@ export default function Team() {
                 </p>
                 <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
                   <Link to="/careers">
-                    👉 Careers at Genexlyf (Coming Soon)
+                    Careers at Genexlyf (Coming Soon)
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
@@ -278,7 +278,7 @@ export default function Team() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Talk to Us
+                    Talk to Us
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
@@ -289,7 +289,7 @@ export default function Team() {
                   className="hover:scale-105 active:scale-95 transition-all"
                 >
                   <Link to="/portfolio">
-                    👉 Explore Our Work
+                    Explore Our Work
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>

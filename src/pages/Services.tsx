@@ -167,7 +167,7 @@ export default function Services() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🤝 How We Deliver"
+            badge="How We Deliver"
             title="Our Working Model"
             description="We don't just deliver projects — we build long-term partnerships."
           />
@@ -254,13 +254,13 @@ export default function Services() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Talk to Us
+                    Talk to Us
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
                   <Link to="/products">
-                    👉 Explore Our Platforms
+                    Explore Our Platforms
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>

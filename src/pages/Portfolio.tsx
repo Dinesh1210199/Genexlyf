@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Zap, School, Code2, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Mail, Zap, School, Code2, Sparkles, CheckCircle2, HelpCircle, Lightbulb, CheckCircle, Search } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -173,7 +173,10 @@ export default function Portfolio() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
-                      <h3 className="text-2xl font-bold text-white">🔹 {project.title}</h3>
+                      <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-cyan-400" />
+                        {project.title}
+                      </h3>
                       <Badge className="bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
                         {project.status}
                       </Badge>
@@ -207,7 +210,7 @@ export default function Portfolio() {
       }}>
         <div className="container mx-auto px-4">
           <SectionHeader
-            badge="🔍 Case Study Style"
+            badge="Case Study Style"
             title="How We Typically Work"
           />
           <div className="max-w-4xl mx-auto">
@@ -215,7 +218,7 @@ export default function Portfolio() {
               <AnimatedCard delay={0}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl">❓</span>
+                    <HelpCircle className="w-6 h-6 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">Problem</h3>
                   <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
@@ -226,7 +229,7 @@ export default function Portfolio() {
               <AnimatedCard delay={0.1}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl">💡</span>
+                    <Lightbulb className="w-6 h-6 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">Solution</h3>
                   <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
@@ -237,7 +240,7 @@ export default function Portfolio() {
               <AnimatedCard delay={0.2}>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-                    <span className="text-2xl">✅</span>
+                    <CheckCircle className="w-6 h-6 text-cyan-400" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">Outcome</h3>
                   <p className="text-[#C7D2E0] text-sm" style={{ lineHeight: '1.65', fontFamily: 'Inter, sans-serif' }}>
@@ -314,7 +317,7 @@ export default function Portfolio() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/contact">
-                    👉 Talk to Us
+                    Talk to Us
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
@@ -325,7 +328,7 @@ export default function Portfolio() {
                   className="hover:scale-105 active:scale-95 transition-all"
                 >
                   <Link to="/products">
-                    👉 Explore Our Products
+                    Explore Our Products
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
