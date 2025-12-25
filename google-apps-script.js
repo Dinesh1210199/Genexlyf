@@ -80,7 +80,7 @@ Submitted at: ${timestamp}
     
     try {
       MailApp.sendEmail({
-        to: 'hello@genexlyf.com',
+        to: 'genexlyf@gmail.com',
         subject: emailSubject,
         body: emailBody
       });

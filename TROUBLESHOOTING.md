@@ -53,7 +53,7 @@ When deploying the web app, you may see authorization prompts:
 
 **Check:**
 1. Check your spam folder
-2. Verify the email address in the script: `hello@genexlyf.com`
+2. Verify the email address in the script: `genexlyf@gmail.com`
 3. Check the Apps Script execution log for email errors
 4. Make sure the script has permission to send emails
 

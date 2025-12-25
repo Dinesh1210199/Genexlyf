@@ -86,7 +86,7 @@ If you're seeing authentication errors or "can't reach this page" errors:
    - Fill out the contact form on your website
    - Submit it
    - Check your Google Sheet - you should see a new row with the form data
-   - Check your email (hello@genexlyf.com) - you should receive a notification
+   - Check your email (genexlyf@gmail.com) - you should receive a notification
 
 2. **Troubleshooting**
    - If submissions aren't appearing in the sheet, check:
@@ -99,7 +99,7 @@ If you're seeing authentication errors or "can't reach this page" errors:
 
 - The Google Apps Script is set to allow "Anyone" to access it, which is necessary for public form submissions
 - The script validates and sanitizes input before writing to the sheet
-- Email notifications are sent to hello@genexlyf.com for each submission
+- Email notifications are sent to genexlyf@gmail.com for each submission
 
 ## Sheet Structure
 
