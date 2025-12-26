@@ -187,7 +187,7 @@ export function HeroSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFFFFF] leading-tight mb-6 px-2"
             style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.25)' }}
           >
-            Build the Generation's Next Life Technology
+            <span className="text-cyan-400">Genexlyf</span>: Build the Generation's Next Life Technology
           </motion.h1>
 
           <motion.p
